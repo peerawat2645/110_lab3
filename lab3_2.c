@@ -1,44 +1,19 @@
-#include<stdio.h>
 int main()
 {
-    int i,j,n,max=0,x,y;
+    int a,i,n,p,time[48]={0},max=0,x;
     scanf("%d",&n);
-    if(n>=1&&n<=10000)
+    for(i=0;i<n;i++)
     {
-        int p[n],a[n];
-        for(i=0; i<n; i++)
-            scanf("%d %d",&p[i],&a[i]);
-        for(i=0; i<n; i++)
-        {
-            if(p[i]>p[i+1])
-            {
-                y=a[i];
-                a[i]=a[i+1];
-                a[i+1]=y;
-                y=p[i];
-                p[i]=p[i+1];
-                p[i+1]=y;
-            }
-        }
-        for(i=0; i<n; i++)
-        {
-            if(p[i]>=1&&p[i]<=48&&a[i]>=1&&a[i]<=50000)
-            {
-                for(i=0; i<n; i++)
-                {
-                    if(p[i]==p[i+1])
-                    {
-                        a[i]+=a[i+1];
-                    }
-                    if(a[i]>max)
-                    {
-                        max=a[i];
-                        x=i+1;
-                    }
-                }
-            }
-        }
-        printf("%d %d",x,max);
+        scanf("%d %d",&p,&a);
+        time[p-1]+=a;
     }
-    return 0;
+    for(i=0;i<48;i++)
+    {
+        if(max<time[i])
+        {
+            max=time[i];
+            x=i;
+        }
+    }
+    printf("%d %d",x+1,time[x]);
 }
