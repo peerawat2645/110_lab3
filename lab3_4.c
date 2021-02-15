@@ -1,3 +1,4 @@
+#include<stdio.h>
 int main()
 {
   int n, i = 3, count, c,max;
