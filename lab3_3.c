@@ -11,9 +11,12 @@ int main()
             {
                 printf("%d\n",i);
                 n/=i;
+                if(n==1)
+            printf("0");
             }
         }
         i++;
+
     }
     return 0;
 }
