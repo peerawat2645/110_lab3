@@ -11,8 +11,8 @@ int main()
             {
                 printf("%d\n",i);
                 n/=i;
-                if(n==1)
-            printf("0");
+                if(n/i==0)
+                    printf("%d",n/i);
             }
         }
         i++;
